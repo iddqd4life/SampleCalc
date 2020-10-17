@@ -1,0 +1,7 @@
+#output_block {
+    display: flex;
+}
+
+.lang_output {
+    padding-left: 5px;
+}

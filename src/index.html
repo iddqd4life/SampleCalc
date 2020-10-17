@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SampleCalc</title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+    <div class="textarea_block">
+        <textarea id="english_textarea" placeholder="English text here..."></textarea>
+        <textarea id="russian_textarea" placeholder="Русский текст сюда..."></textarea>
+        <button id="insert_text">Вставить текст</button><span>Английская и русская версия отрывка из книги "Just For Fun" ("История нечаянного революционера") из книги *УКАЖИ АВТОРА*</span>
+        <button id="calc_btn">Calculate!</button>
+    </div>
+
+    <div id="output_block">
+        <div class="lang_output">
+            <p>Анализ англоязычного текста:</p>
+            <p id="english_output">
+
+            </p>
+        </div>
+        <div class="lang_output">
+            <p>Анализ русскоязычного текста:</p>
+            <p id="russian_output">
+
+            </p>
+        </div>
+    </div>
+    <p align="center" id="final_output"></p>
+
+    <script src="samples.js"></script>
+    <script src="script/sample.js"></script>
+    <script src="script/main.js"></script>
+</body>
+</html>
