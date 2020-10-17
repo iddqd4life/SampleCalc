@@ -29,38 +29,29 @@ function initSample() {
 function insertText() {
     english_textarea.value = samplesData[0].JustForFun_English;
     russian_textarea.value = samplesData[0].JustForFun_Russian;
-
-    console.log(samplesData[0].JustForFun_English.length);
-    console.log(samplesData[0].JustForFun_Russian.length);
 }
 
 function calculateAll() {
     initSample();
 
-    english_output.innerHTML = engSample.alphabetFreq();
-    russian_output.innerHTML = rusSample.alphabetFreq();
+    english_output.innerHTML = genOutput(engSample);
+    russian_output.innerHTML = genOutput(rusSample);
 
-    english_output.innerHTML += engSample.сalcEntropy();
-    russian_output.innerHTML += rusSample.сalcEntropy();
-
-    english_output.innerHTML += engSample.calcDAbsolute();
-    russian_output.innerHTML += rusSample.calcDAbsolute();
-
-    english_output.innerHTML += engSample.calcDRelative();
-    russian_output.innerHTML += rusSample.calcDRelative();
-
-    final_output.innerHTML = calcWitchBetter();
+    final_output.innerHTML = calcWhichBetter(rusSample.getDRelative(), engSample.getDRelative());
 }
 
-function calcWitchBetter() {
-    if (engSample.DRelative < rusSample.DRelative) {
-        return "Выгоднее использовать англоязычную версию текста.";
-    } else if (rusSample.DRelative < engSample.DRelative) {
-        return "Выгоднее использовать русскоязычную версию текста.";
-    } else {
-        return "Можно использовать любую версию текста.";
+function genOutput(s) {
+    let output = "";
+    
+    for (var char in s.getAlphabet()) {
+        output += "\"" + char + "\": " + s.alphabet[char] + ". Вероятность: " + (s.alphabet[char] / s.text.length).toFixed(4) + "<br/>";
     }
-}
 
+    output += "Энтропия: " + s.getEntropy() + "<br/>";
+    output += "Абсолютная избыточность: " + s.getDAbsolute() + "<br/>";
+    output += "Относительная избыточность: " + s.getDRelative() + "<br/>";
+
+    return output;
+}
 
 init();

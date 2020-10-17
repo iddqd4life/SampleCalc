@@ -17,7 +17,7 @@ function createWindow() {
     }));
 
     win.setMenu(null);
-    win.openDevTools();
+    // win.openDevTools();
 
 }
 
