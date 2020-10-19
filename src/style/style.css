@@ -1,7 +1,214 @@
-#output_block {
+:root {
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: "ZingRust";
+    src: url("../fonts/ZingRustDemo-Base.otf");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+html {
+    background: url("../assets/background.svg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.main__content {
+    padding: 95px 208px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome__text {
+    font-size: 8rem;
+    font-family: "ZingRust";
+    color: #fff;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.input__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 72.5px;
+    width: 100%;
+}
+
+.vertical__line {
+    margin: 0 54px;
+    display: inline-block;
+    height: 341px;
+    width: 3px;
+    background-color: #5E3593;
+}
+
+.textarea__block {
+    width: 100%;
+    height: 322px;
+    background: rgba(140, 91, 185, 0.2);
+    border: 2px solid #8C5BB9;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 11px;
+    display: flex;
+    flex-direction: column;
+}
+
+.textarea__container {
+    padding: 14px;
+    height: 100%;
+    width: 100%;
     display: flex;
 }
 
-.lang_output {
-    padding-left: 5px;
+.textareas {
+    font-family: "Roboto";
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    color: #fff;
+    outline: none;
+    resize: none;
+    overflow-y: auto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.8rem;
+    line-height: 27px;   
+}
+
+.textareas__animate {
+    animation: 200ms linear 0s fadeLeft;
+}
+
+.textareas::-webkit-input-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.char__counter__block {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 29px;
+}
+
+.char__counter__unactive {
+    background: rgba(96, 26, 73, 0.6);
+    border: 3px solid #A22C7B;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 1.8rem;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    padding: 15px;
+}
+
+.char__counter__active {
+    background: #231F52;
+    border: 3px solid #6B64BE;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 1.8rem;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    padding: 15px;
+} 
+
+.text__lock {
+    display: inline-block;
+    content: url("../assets/locked.svg");
+    margin-right: 10px;
+}
+
+.text__unlock {
+    display: inline-block;
+    content: url("../assets/unlocked.svg");
+    margin-right: 10px;
+}
+
+.buttons__content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 87px;
+}
+
+.autofill__button {
+    background: #762C70;
+    border-radius: 50px;
+    border: none;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    outline: none;
+    font-size: 2.4rem;
+    font-family: "ZingRust";
+    cursor: pointer;
+    margin-right: 94px;
+}
+
+.copypaste__icon {
+    display: inline-block;
+    content: url("../assets/copypaste.svg");
+    margin-right: 10px;   
+}
+
+.confirm__button__unactive {
+    background: #4F4F57;
+    border: none;
+    outline: none;
+    padding: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.confirm__button__active {
+    background: #6B64BE;
+    border: none;
+    outline: none;
+    padding: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.next__icon {
+    content: url("../assets/next.svg");
+    display: inline-block;
 }

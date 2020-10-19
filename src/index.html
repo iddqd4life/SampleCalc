@@ -6,28 +6,32 @@
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
-    <div class="textarea_block">
-        <textarea id="english_textarea" placeholder="English text here..."></textarea>
-        <textarea id="russian_textarea" placeholder="Русский текст сюда..."></textarea>
-        <button id="insert_text">Вставить текст</button>
-        <button id="calc_btn">Calculate!</button>
-    </div>
-
-    <div id="output_block">
-        <div class="lang_output">
-            <p>Анализ англоязычного текста:</p>
-            <p id="english_output">
-
-            </p>
+    <div class="main__content">
+        <h1 class="welcome__text">Добро пожаловать!</h1>
+        <div class="input__content">
+            <div class="textarea__block">
+                <div class="textarea__container">
+                    <textarea id="russian_text" class="textareas" placeholder="Пример текста..."></textarea>
+                </div>
+                <div id="russian_char_counter_block" class="char__counter__block char__counter__unactive">
+                    <span id="russian_text_icon" class="text__lock"></span><span id="russian_char_counter">0</span>
+                </div>
+            </div>
+            <span class="vertical__line"></span>
+            <div class="textarea__block">
+                <div class="textarea__container">
+                    <textarea id="english_text" class="textareas" placeholder="Sample text..."></textarea>
+                </div>
+                <div id="english_char_counter_block" class="char__counter__block char__counter__unactive">
+                    <span id="english_text_icon" class="text__lock"></span><span id="english_char_counter">0</span>
+                </div>
+            </div>
         </div>
-        <div class="lang_output">
-            <p>Анализ русскоязычного текста:</p>
-            <p id="russian_output">
-
-            </p>
+        <div class="buttons__content">
+            <button id="autofill_btn" class="autofill__button"><span class="copypaste__icon"></span>Автозаполнение</button>
+            <button id="next_btn" class="confirm__button__unactive"><span class="next__icon"></span></button>
         </div>
     </div>
-    <p align="center" id="final_output"></p>
 
     <script src="script/calculate.js"></script>
     <script src="samples.js"></script>
