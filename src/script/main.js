@@ -4,6 +4,9 @@ var rusSample, engSample;
 var samplesData = JSON.parse(samples);
 
 function init() {
+    start_page = document.getElementById("start_page");
+    calc_page = document.getElementById("calc_page");
+
     english_textarea = document.getElementById("english_text");
     russian_textarea = document.getElementById("russian_text");
 
@@ -24,7 +27,7 @@ function init() {
     english_textarea.onkeyup = checkEnglishTextarea;
     russian_textarea.onkeyup = checkRussianTextarea;
 
-    //calc_btn.onclick = calculateAll;
+    calc_btn.onclick = calculateAll;
 }
 
 function checkTextAreas() {
@@ -100,20 +103,27 @@ function insertText() {
     }, 200);
 }
 
+function changeScreen(removable, replacer) {
+    removable.classList.remove("visible");
+    replacer.classList.add("visible");
+}
+
 function calculateAll() {
     initSample();
 
-    if (english_textarea.value == "" || russian_textarea.value == "") {
-        english_output.innerHTML = russian_output.innerHTML = "";
-        final_output.innerHTML = "Обнаружены пустые поля, для начала вставьте или напишите текст.";
+    // if (english_textarea.value == "" || russian_textarea.value == "") {
+    //     english_output.innerHTML = russian_output.innerHTML = "";
+    //     final_output.innerHTML = "Обнаружены пустые поля, для начала вставьте или напишите текст.";
         
-        return false;
-    }
+    //     return false;
+    // }
 
-    english_output.innerHTML = genOutput(engSample);
-    russian_output.innerHTML = genOutput(rusSample);
+    // english_output.innerHTML = genOutput(engSample);
+    // russian_output.innerHTML = genOutput(rusSample);
 
-    final_output.innerHTML = calcWhichBetter(rusSample.getDRelative(), engSample.getDRelative());
+    // final_output.innerHTML = calcWhichBetter(rusSample.getDRelative(), engSample.getDRelative());
+
+    changeScreen(start_page, calc_page);
 }
 
 function genOutput(s) {

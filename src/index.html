@@ -7,29 +7,71 @@
 </head>
 <body>
     <div class="main__content">
-        <h1 class="welcome__text">Добро пожаловать!</h1>
-        <div class="input__content">
-            <div class="textarea__block">
-                <div class="textarea__container">
-                    <textarea id="russian_text" class="textareas" placeholder="Пример текста..."></textarea>
+        <div class="welcome__content visible" id="start_page">
+            <h1 class="welcome__text">Добро пожаловать!</h1>
+            <div class="input__content">
+                <div class="textarea__block">
+                    <div class="textarea__container">
+                        <textarea id="russian_text" class="textareas" placeholder="Пример текста..."></textarea>
+                    </div>
+                    <div id="russian_char_counter_block" class="char__counter__block char__counter__unactive">
+                        <span id="russian_text_icon" class="text__lock"></span><span id="russian_char_counter">0</span>
+                    </div>
                 </div>
-                <div id="russian_char_counter_block" class="char__counter__block char__counter__unactive">
-                    <span id="russian_text_icon" class="text__lock"></span><span id="russian_char_counter">0</span>
+                <span class="vertical__line"></span>
+                <div class="textarea__block">
+                    <div class="textarea__container">
+                        <textarea id="english_text" class="textareas" placeholder="Sample text..."></textarea>
+                    </div>
+                    <div id="english_char_counter_block" class="char__counter__block char__counter__unactive">
+                        <span id="english_text_icon" class="text__lock"></span><span id="english_char_counter">0</span>
+                    </div>
                 </div>
             </div>
-            <span class="vertical__line"></span>
-            <div class="textarea__block">
-                <div class="textarea__container">
-                    <textarea id="english_text" class="textareas" placeholder="Sample text..."></textarea>
-                </div>
-                <div id="english_char_counter_block" class="char__counter__block char__counter__unactive">
-                    <span id="english_text_icon" class="text__lock"></span><span id="english_char_counter">0</span>
-                </div>
+            <div class="buttons__content">
+                <button id="autofill_btn" class="autofill__button"><span class="copypaste__icon"></span>Автозаполнение</button>
+                <button id="next_btn" class="confirm__button__unactive"><span class="next__icon"></span></button>
             </div>
         </div>
-        <div class="buttons__content">
-            <button id="autofill_btn" class="autofill__button"><span class="copypaste__icon"></span>Автозаполнение</button>
-            <button id="next_btn" class="confirm__button__unactive"><span class="next__icon"></span></button>
+
+        <div class="calculate__content" id="calc_page">
+            <div class="output__blocks__container">
+                <div class="output__blocks">
+                    <h2 class="output__blocks__header">Русскоязычный текст</h2>
+                    <div class="entropy__text">Энтропия текста: <span id="russian_entropy_val">0.00</span></div>
+
+                    <!-- TODO: Alphabet block -->
+
+                    <div class="D__block">
+                        <h3 class="D__header">Избыточность</h3>
+                        <div class="D__content">
+                            <p>Абсолютная: <span>0.00</span></p>
+                            <p>Относительная: <span>0.00</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="output__blocks">
+                    <h2 class="output__blocks__header">Англоязычный текст</h2>
+                    <div class="entropy__text">Энтропия текста: <span id="english_entropy_val">0.00</span></div>
+
+                    <!-- TODO: Alphabet block too -->
+
+                    <div class="D__block">
+                        <h3 class="D__header">Избыточность</h3>
+                        <div class="D__content">
+                            <p>Абсолютная: <span>0.00</span></p>
+                            <p>Относительная: <span>0.00</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="output__buttons__content">
+                <h4 class="output__buttons__header">Следует использовать <span>англоязычный текст</span></h4>
+                <div class="output__buttons__container">
+                    <button id="info_btn" class="information__button"><span class="info__ico"></span>Информация</button>
+                    <button id="retry_btn" class="retry__button"><span class="retry__ico"></span></button>
+                </div>
+            </div>
         </div>
     </div>
 

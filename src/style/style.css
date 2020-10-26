@@ -8,7 +8,6 @@
     box-sizing: border-box;
 }
 
-
 @font-face {
     font-family: "ZingRust";
     src: url("../fonts/ZingRustDemo-Base.otf");
@@ -17,6 +16,11 @@
 @font-face {
     font-family: "Roboto";
     src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Roboto Mono";
+    src: url("../fonts/Roboto-Mono-Regular.ttf")
 }
 
 @keyframes fadeLeft {
@@ -33,19 +37,45 @@
 
 html {
     background: url("../assets/background.svg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
     overflow: hidden;
 }
 
+.visible {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+}
+
 .main__content {
+    display: inline;
+}
+
+.welcome__content {
+    transition: 0.5s;
     padding: 95px 208px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transform: translateX(-100%);
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.calculate__content {
+    transition: 0.5s;
+    padding: 64px 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
 }
 
 .welcome__text {
@@ -104,7 +134,11 @@ html {
     font-style: normal;
     font-weight: normal;
     font-size: 1.8rem;
-    line-height: 27px;   
+    line-height: 27px; 
+}
+
+.textareas::-webkit-scrollbar {
+    width: 0;
 }
 
 .textareas__animate {
@@ -211,4 +245,121 @@ html {
 .next__icon {
     content: url("../assets/next.svg");
     display: inline-block;
+}
+
+.output__blocks__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.output__blocks {
+    background-color: #322D6C;
+    border-radius: 35px;
+    padding: 29px 23px 18px 23px;
+    margin: 0 35px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.output__blocks__header {
+    text-align: center;
+    font-size: 4.8rem;
+    font-style: normal;
+    font-weight: normal;
+    font-family: "ZingRust";
+    color: #fff;
+}
+
+.entropy__text {
+    text-align: center;
+    width: 100%;
+    background: rgba(43, 39, 98, 0.5);
+    border-radius: 15px;
+    color: #fff;
+    font-family: "ZingRust";
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: normal;
+    padding: 20px 0;
+}
+
+.entropy__text span {
+    font-family: "Roboto Mono";
+    margin-left: 12px;
+}
+
+.D__block {
+    margin-top: 16px;
+    padding: 23px 26px;
+    background: rgba(43, 39, 98, 0.5);
+    border-radius: 15px;
+    width: 100%;
+}
+
+.D__header {
+    font-family: "ZingRust";
+    font-size: 2.4rem;
+    color: #fff;
+    text-align: center;
+}
+
+.D__content {
+    color: #fff;
+    font-family: "Roboto Mono";
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+}
+
+.D__content span {
+    display: inline-block;
+    margin-left: 16px;
+}
+
+.D__content p {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.output__buttons__content {
+    font-family: "ZingRust";
+    background: rgba(43, 39, 98, 0.5);
+    border-radius: 30px;
+    padding: 26px 136px 50px 136px;
+    color: #fff;
+    margin-top: 78px;
+}
+
+.output__buttons__header {
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.information__button {
+    background: #762C70;
+    border-radius: 50px;
+    border: none;
+    padding: 14px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    font-size: 2.4rem;
+    cursor: pointer;
+    font-family: "ZingRust";
+    color: #fff;
+}
+
+.info__ico {
+    display: inline-block;
+    content: url("../assets/info.svg");
+    margin-right: 10px;  
 }

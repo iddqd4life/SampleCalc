@@ -1,5 +1,7 @@
 function Sample(text) {
-    this.text = text;
+    this.text = text.replace(/[^А-Яа-яA-Za-z0-9 ]/g, "");
+
+    console.log(this.text);
 
     this.alphabet = calculateCharQuantity(this.text);
     this.entropy = calcEntropy(this.alphabet, this.text.length);
