@@ -24,10 +24,33 @@ function init() {
 
     calc_btn = document.getElementById("next_btn");
 
+    russian_entropy = document.getElementById("russian_entropy_val");
+    english_entropy = document.getElementById("english_entropy_val");
+
+    russian_DRelative = document.getElementById("russian_DRelative");
+    russian_DAbsolute = document.getElementById("russian_DAbsolute");
+
+    english_DRelative = document.getElementById("english_DRelative");
+    english_DAbsolute = document.getElementById("english_DAbsolute");
+
+    better_text = document.getElementById("better_text");
+
+    info_btn = document.getElementById("info_btn");
+    about_block = document.getElementById("about_block");
+    close_about_btn = document.getElementById("close_btn");
+    retry_btn = document.getElementById("retry_btn");
+
     english_textarea.onkeyup = checkEnglishTextarea;
     russian_textarea.onkeyup = checkRussianTextarea;
 
     calc_btn.onclick = calculateAll;
+    
+    info_btn.onclick = switchAbout;
+    close_about_btn.onclick = switchAbout;
+    
+    retry_btn.onclick = function() {
+        changeScreen(calc_page, start_page);
+    }
 }
 
 function checkTextAreas() {
@@ -108,36 +131,39 @@ function changeScreen(removable, replacer) {
     replacer.classList.add("visible");
 }
 
-function calculateAll() {
-    initSample();
+function switchAbout() {
+    if (!(about_block.classList.contains("about__block__visible"))) {
+        about_block.classList.add("about__block__visible");
+    } else {
+        about_block.classList.remove("about__block__visible");
+        about_block.classList.add("about__block__hide");
 
-    // if (english_textarea.value == "" || russian_textarea.value == "") {
-    //     english_output.innerHTML = russian_output.innerHTML = "";
-    //     final_output.innerHTML = "Обнаружены пустые поля, для начала вставьте или напишите текст.";
-        
-    //     return false;
-    // }
-
-    // english_output.innerHTML = genOutput(engSample);
-    // russian_output.innerHTML = genOutput(rusSample);
-
-    // final_output.innerHTML = calcWhichBetter(rusSample.getDRelative(), engSample.getDRelative());
-
-    changeScreen(start_page, calc_page);
+        setTimeout(function() {
+            about_block.classList.remove("about__block__hide");
+        }, 200);
+    }
 }
 
-function genOutput(s) {
-    let output = "";
+function calculateAll() {
     
-    for (var char in s.getAlphabet()) {
-        output += "\"" + char + "\": " + s.alphabet[char] + ". Вероятность: " + (s.alphabet[char] / s.text.length).toFixed(4) + "<br/>";
+    if (english_textarea.value == "" || russian_textarea.value == "") {
+        return false;
     }
 
-    output += "Энтропия: " + s.getEntropy() + "<br/>";
-    output += "Абсолютная избыточность: " + s.getDAbsolute() + "<br/>";
-    output += "Относительная избыточность: " + s.getDRelative() + "<br/>";
+    initSample();
 
-    return output;
+    russian_entropy.innerHTML = rusSample.getEntropy();
+    english_entropy.innerHTML = engSample.getEntropy();
+
+    russian_DAbsolute.innerHTML = rusSample.getDAbsolute();
+    russian_DRelative.innerHTML = rusSample.getDRelative();
+
+    english_DAbsolute.innerHTML = engSample.getDAbsolute();
+    english_DRelative.innerHTML = engSample.getDRelative();
+
+    better_text.innerHTML = calcWhichBetter(rusSample.getDRelative(), engSample.getDRelative());
+
+    changeScreen(start_page, calc_page);
 }
 
 init();

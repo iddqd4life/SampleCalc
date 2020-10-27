@@ -20,10 +20,10 @@ function calcEntropy(alphabet, len) {
     let entropy = 0;
 
     for (var char in alphabet) {
-        entropy += (alphabet[char] / len) * calcLog(len / alphabet[char], 2).toFixed(2);
+        entropy += (alphabet[char] / len) * calcLog(len / alphabet[char], 2);
     }
 
-    return entropy;
+    return entropy.toFixed(2);
 }
 
 function calcDAbsolute(hartley, entropy) {
@@ -40,10 +40,10 @@ function calcLog(a, b) {
 
 function calcWhichBetter(DRelative_rus, DRelative_eng) {
     if (DRelative_rus < DRelative_eng) {
-        return "Лучше использовать русскоязычный текст.";
+        return "русскоязычный";
     } else if (DRelative_eng < DRelative_rus) {
-        return "Лучше использовать англоязычный текст.";
+        return "англоязычный";
     } else {
-        return "Можно использовать любой текст."
+        return "любой";
     }
 }

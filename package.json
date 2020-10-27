@@ -4,7 +4,8 @@
   "description": "My IT project for university",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ./index.js"
   },
   "author": "Shtraikher",
   "license": "MIT",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Shtraikher/SampleCalc/issues"
   },
-  "homepage": "https://github.com/Shtraikher/SampleCalc#readme"
+  "homepage": "https://github.com/Shtraikher/SampleCalc#readme",
+  "devDependencies": {
+    "electron": "^10.1.5",
+    "electron-builder": "^12.3.1"
+  }
 }

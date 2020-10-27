@@ -1,5 +1,5 @@
 function Sample(text) {
-    this.text = text.replace(/[^А-Яа-яA-Za-z0-9 ]/g, "");
+    this.text = text;
 
     console.log(this.text);
 

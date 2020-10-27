@@ -35,6 +35,30 @@
     }
 }
 
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
 html {
     background: url("../assets/background.svg") no-repeat center center fixed; 
     background-size: cover;
@@ -252,6 +276,7 @@ html {
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    position: relative;
 }
 
 .output__blocks {
@@ -332,15 +357,23 @@ html {
     font-family: "ZingRust";
     background: rgba(43, 39, 98, 0.5);
     border-radius: 30px;
-    padding: 26px 136px 50px 136px;
+    padding: 26px 100px;
     color: #fff;
-    margin-top: 78px;
+    margin-top: 40px;
 }
 
 .output__buttons__header {
     font-size: 3rem;
     font-style: normal;
     font-weight: normal;
+    text-align: center;
+}
+
+.output__buttons__container {
+    margin-top: 53px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .information__button {
@@ -356,10 +389,111 @@ html {
     cursor: pointer;
     font-family: "ZingRust";
     color: #fff;
+    margin-right: 90px;
 }
 
 .info__ico {
     display: inline-block;
     content: url("../assets/info.svg");
-    margin-right: 10px;  
+    margin-right: 10px;
+    width: 37px;
+    height: 38px;
+}
+
+.retry__button {
+    background-color: #6B64BE;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 17px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.retry__ico {
+    display: inline-block;
+    content: url("../assets/repeat.svg");
+}
+
+.about__block {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    padding: 0 35px;
+    display: none;
+}
+
+.about__block__visible {
+    display: block;
+    animation: 200ms linear 0s fadeUp;
+}
+
+.about__block__hide {
+    animation: 200ms linear 0s fadeDown;
+    display: block;
+}
+
+.about__container {
+    padding: 15px 20px 20px 20px;
+    background: #2B2762;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.about__container__header {
+    font-size: 3rem;
+    font-family: "ZingRust";
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.samplecalc__logo {
+    display: inline-block;
+    content: url("../assets/samplecalc_logo.svg");
+    margin-right: 6px;
+}
+
+.description {
+    margin-top: 16px;
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.description a {
+    color: #fff;
+}
+
+.description span {
+    font-family: "Roboto Mono";
+    font-weight: normal;
+}
+
+.other__description {
+    font-family: "Roboto";
+    font-size: 1.8rem;
+    margin-top: 24px;
+}
+
+.close__ico {
+    content: url("../assets/close.svg");
+    display: inline-block;
+    max-width: 57px;
+}
+
+.close__btn {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: auto;
+    display: block;
 }
