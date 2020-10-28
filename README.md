@@ -3,7 +3,9 @@ SampleCalc
 SampleCalc is my university project. It can calculate entropy of text, frequency and quantity of chars and etc.
 ### Dependencies for building
 Install these packages via npm
-```sudo npm i -g --save-dev electron electron-builder```
+```
+sudo npm i -g --save-dev electron electron-builder
+```
 ### Building
 First of all you need clone this repo:
 ```
