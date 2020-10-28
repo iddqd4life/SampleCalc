@@ -17,7 +17,7 @@ electron-packager ./ SampleCalc --platform=linux --arch=x64
 ```
 Or for Windows OS:
 ```
-electron-packager ./ SampleCalc --platform=linux --arch=x64
+electron-packager ./ SampleCalc --platform=win32 --arch=x64
 ```
 ***
 ***Created using Node.js and Electron***
