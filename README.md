@@ -1,6 +1,6 @@
 SampleCalc
 =====================
-SampleCalc is my university project. It can calculate entropy of text, frequency and quantity of chars and etc.
+SampleCalc is my university project. It can calculate entropy of text, frequency, quantity of chars and etc.
 ### Dependencies for building
 Install these packages via npm (without "sudo" on Windows OS):
 ```
