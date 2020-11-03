@@ -4,7 +4,7 @@ SampleCalc is my university project. It can calculate entropy of text, frequency
 ### Dependencies for building
 Install these packages via npm (without "sudo" on Windows OS):
 ```
-sudo npm i -g --save-dev electron electron-builder
+sudo npm i -g --save-dev electron electron-packager
 ```
 ### Building
 First of all you need clone this repo:
