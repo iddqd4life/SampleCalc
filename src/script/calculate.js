@@ -2,11 +2,16 @@ function calculateCharQuantity(text) {
     let alphabet = {};
 
     for (var char in text) {
-        alphabet[text[char].toLocaleLowerCase()] = 0;
+
+        if (text[char].toLocaleLowerCase().match(/[a-zа-я]/gi)) {
+            alphabet[text[char].toLocaleLowerCase()] = 0;
+        }
     }
 
     for (var char in text) {
-        alphabet[text[char].toLocaleLowerCase()]++;
+        if (text[char].toLocaleLowerCase().match(/[a-zа-я]/gi)) {
+            alphabet[text[char].toLocaleLowerCase()]++;
+        }
     }
 
     return alphabet;
