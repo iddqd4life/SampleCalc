@@ -12,7 +12,7 @@ For Windows:
 npm install electron --save-dev
 ```
 ```
-npm install electrom-packager --save-dev -g
+npm install electron-packager --save-dev -g
 ```
 ### Building
 First of all you need clone this repo:
